@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Profile</title>
+    <!-- Start Meta Cods -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- End Meta Cods -->
+
+    <!-- Start Import Bootstrap -->
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- End Import Bootstrap -->
+
+    <!-- Import axios -->
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
+    <!-- End Import axios -->
+
+    <!-- Start Css Custem Links Cods -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- End Css Custem Links Cods -->
+
+    <!-- Strat js Custem Fils -->
+    <!-- <script defer src="./js/login.js"></script> -->
+    <script defer src="./js/logOut.js"></script>
+    <!-- <script defer src="./js/regester.js"></script> -->
+    <script defer src="./js/home.js"></script>
+    <script defer src="./js/main.js"></script>
+    <script defer src="./js/slide.js"></script>
+    <script defer src="./js/creat.js"></script>
+    <script defer src="./js/profile.js"></script>
+    <!-- End js Custem Fils -->
+</head>
+
+<body>
+
+     <!-- Start Loader -->
+     <div id="loader" style="position: fixed; z-index: 999999; left: 0; right: 0; bottom: 0; top: 0; margin: auto auto;" class="text-center d-flex justify-content-center align-items-center">
+        <div class="lds-hourglass"></div>
+    </div>   
+<!-- End Loader -->
+
+    <div id="liveAlertPlaceholder" class="alert-pop fade show"></div>
+
+   <!-- Above Nav -->
+   <header class="abov-nav">
+    <div class="d-flex justify-content-between">
+        <div class="logo mt-2" style="color: #fff;">
+            <i class="bi bi-hash"></i>
+            <span style="font-size: 20px;"> Trendyvai</span>
+        </div>
+        <div class="me-5 mt-2">
+            <ul class="d-flex justify-content-between list-unstyled">
+            <li class="me-1" style="color: #fff;" id="creatBtn" onclick="addBtnClicked()">
+                <i class="bi bi-plus-circle-fill" style="font-size: 25px;"></i>
+            </li>
+
+
+            <li class="" style="color: #fff;">
+                <i class="bi bi-bell-fill" style="font-size: 25px;"></i>
+            </li>
+        </ul>
+        </div>
+    </div>
+
+</header>
+<!--  // Above Nav  //-->
+
+
+<!-- Bottom Nav -->
+<footer class="bootom-nav">
+<div class="">
+    <div class="me-5 mt-2" style="color: #fff;">
+        <ul class="d-flex justify-content-between list-unstyled">
+            <li>
+                <a href="./home.html" style="color: #fff;" class="ms-4 mb-2">
+                    <i class="bi bi-house" style="font-size: 25px;"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" style="color: #fff;" class="ms-4 mb-2">
+                    <i class="bi bi-search-heart" style="font-size: 25px;"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" style="color: #fff;" class="ms-4 mb-2">
+                    <i class="bi bi-messenger" style="font-size: 25px;"></i>
+                </a>
+            </li>
+            <li>
+                <a type="button" class="" id="logoutBtn" onclick="logOut()" style="color: #fff;" class="ms-4 mb-2">
+                    <i class="bi bi-box-arrow-in-right" style="font-size: 25px;"></i>
+                </a>
+            </li>
+            <li class="user " style="cursor: pointer; margin-top: -7px;" onclick="goMyProfile()">
+                    <img src="" style="width: 35px; height: 35px; border-radius: 50%;" id="navImgSlid">
+            </li>
+        </ul>
+    </div>
+</div>
+
+</footer>
+<!--  // Bottom Nav  //-->
+
+
+
+    <!-- Main Content Start -->
+
+
+
+
+    <!-- slider Start -->
+    <div class="slideBar">
+        <div class="top">
+            <div class="logo">
+                <i class="bi bi-hash"></i>
+                <span> Trendyvai</span>
+            </div>
+            <i class="bi bi-list" id="btnMenu"></i>
+        </div>
+        <div class="user">
+            <img src="" style="width: 40px; height: 40px; border-radius: 50%;" id="navImg">
+            <span id="slidUsername"> </span>
+        </div>
+        <ul>
+            <li>
+                <a href="#">
+                    <i class="bi bi-house"></i>
+                    <span class="nav-item">Home</span>
+                </a>
+                <span class="tooltip">Home</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bi bi-search-heart"></i>
+                    <span class="nav-item">Search</span>
+                </a>
+                <span class="tooltip">Search</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bi bi-messenger"></i>
+                    <span class="nav-item">Messenger</span>
+                </a>
+                <span class="tooltip">Messenger</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bi bi-bell-fill"></i>
+                    <span class="nav-item">Notifications</span>
+                </a>
+                <span class="tooltip">Notifications</span>
+            </li>
+            <li>
+                <a class="" id="creatBtn" onclick="addBtnClicked()">
+                    <!-- <a > -->
+                    <i class="bi bi-plus-circle-fill"></i>
+                    <span class="nav-item">Craet</span>
+                </a>
+                </button>
+                <span class="tooltip">Craet</span>
+            </li>
+            <li>
+                <a type="button" class="" id="logoutBtn" onclick="logOut()">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    <span class="nav-item">LogOut</span>
+                </a>
+                <span class="tooltip">LogOut</span>
+            </li>
+        </ul>
+    </div>
+    <!-- slider End -->
+<header>
+    <div class="d-flex justify-content-center mt-3 shadow-sm">
+        <div class="col-lg-8 col-md-8 col-sm-3  " id="">
+            <div class="col-lg-6 col-sm-3">
+                <div class="row bg-light mt-2 the-row-prof" >
+                    <div class="col-lg-3">
+                        <img src="./profile_pics/pic.png" alt="profil user pictser" class="rounded-circle"
+                            style="width: 150px; height: 150px;" id="mainImg">
+                    </div>
+                    <div class="col-lg-2 ">
+                        <span id="mainUsername"> @</span>
+                        <p id="mainName">Majd </p>
+                    </div>
+
+                    <div class="col-lg-6">
+
+                        <div class="d-flex justify-content-evenly font-monospace">
+                            <p><span id="mainPosts">20</span> Posts</p>
+                            <p> <span>69</span> followers</p>
+                            <p><span>87</span> following</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Posts Start -->
+    <div class="container col-lg-6 col-md-6 col-sm-11  mt-4">
+        <div class="row mt-3" id="prifilePosts">
+           
+    </div>
+    </div>
+    <!-- Posts End -->
+
+
+
+
+
+
+
+
+
+
+    <div class="main-content">
+        <div class="container">
+
+        </div>
+    </div>
+    <!-- Main Content End -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Start Models -->
+
+    <!-- Dots Model Start =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
+    <!-- <div class="modal fade " id="dotsModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true" style="margin-top: 150px;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+               
+                <div class="modal-body text-center">
+                    <button class="dotDet" style="color: #dc3545 !important;"> Delet</button>
+                    <hr>
+                    <button class="dotDet" onclick="editePostBtnClicked()"> Edite </button>
+                    <hr>
+                    <button class="dotDet"> Go to The Post</button>
+                    <hr>
+                    <button class="dotDet"> Share</button>
+                    <hr>
+                    <button class="dotDet"> Copy Link </button>
+                    <hr>
+                    <button class="dotDet" type="button" class="btn btn-danger" data-bs-dismiss="modal"> Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Dots Model End=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
+
+
+
+
+
+
+
+
+
+
+    <!-- LogIn Model Start =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="loginModalLabel">logIn</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="usern" class="col-form-label">username:</label>
+                            <input type="text" class="form-control" id="usern" value="majdroses21">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">password:</label>
+                            <input type="password" class="form-control" id="pass" value="123123">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="log()">logIn</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- LogIn Model End=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
+
+
+
+    <!-- Regester Model Start =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
+    <div class="modal fade" id="regModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="loginModalLabel">Regester A new User</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="usern" class="col-form-label">Name:</label>
+                            <input type="text" class="form-control" id="nameInp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="usern" class="col-form-label">username:</label>
+                            <input type="text" class="form-control" id="usrInp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">password:</label>
+                            <input type="password" class="form-control" id="paswInp">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" onclick="regesterClick()">singnUP</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Regester Model End=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
+
+
+
+
+    <!-- Creat Model Start =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
+    <div class="modal fade" id="creatModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="CreatModalLabel">Creat A New Post</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="usern" class="col-form-label">Title:</label>
+                            <input type="text" class="form-control" id="titleInp">
+                            <input type="hidden" id="postHid" value="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="usern" class="col-form-label">Post Content:</label>
+                            <textarea id="postContent"
+                                style="width: 100%; height: 50px; border-radius: 10px;"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="usern" class="col-form-label">Post image:</label>
+                            <input type="file" class="form-control" id="imgInp">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="creatClick()"
+                        id="postModalSubmitEdit">Post</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Creat Model End=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
+
+    <!-- Delet Model Start =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
+    <div class="modal fade" id="deletModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="loginModalLabel">Are You Sure?!!!</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" value="" id="deletId">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" onclick="comfirmDeletPostModal()">Delet</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Delete Model End=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
+
+
+
+
+
+
+    <!-- End Models -->
+</body>
+
+</html>

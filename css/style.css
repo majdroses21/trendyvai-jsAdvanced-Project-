@@ -1,0 +1,450 @@
+body{
+    background-color: #f0ecff !important;
+}
+
+/* /\/\/\/\/\/\/\/\//\\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\//\/\/\/\/\/\/\//\/\/\/\//\/\/\/\/\//\/\/\/\/\ */
+/*                                            Slide bar Start                                                              */
+.slideBar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 90px;
+    background-color: #12171e;
+    padding: 0.4rem 0.8rem;
+    transition: all 0.5s ease;
+    z-index: 9999;
+}
+.slideBar.active{
+    width: 250px;
+} 
+.slideBar.active ~ .main-content{
+    left: 250px;
+    width: calc(100% - 250px);
+}
+
+/* #btn Start */
+.slideBar #btnMenu{
+    position: absolute;
+    color: #fff;
+    top: .4rem;
+    left: 50%;
+    margin-left: 20px;
+    font-size: 1.5rem;
+    line-height: 50px;
+    transform: translateX(-50px);
+    cursor: pointer;
+    
+
+}
+.slideBar.active #btnMenu{
+    left: 100%;
+    margin-left: 0;
+}
+/* #btn End */
+
+/* #Logo Start */
+.slideBar .top .logo{
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+}
+.slideBar.active .top .logo{
+    opacity: 1;
+}
+.top .logo{
+    font-size: 2rem;
+    margin-right: 5px;
+}
+/* #Logo End */
+
+/* #user Start */
+.user{
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+.user span{
+    color: #fff;
+    opacity: 0;
+    margin-left: 1rem;
+
+}
+.slideBar.active .user span{
+    opacity: 1;
+}
+.bold{
+    font-size: 600;
+}
+/* #user End */
+
+/* @UL Start */
+.slideBar ul li{
+    position: relative;
+    list-style-type: none;
+    height: 50px;
+    width: 90%;
+    margin: 0.8rem auto;
+    line-height: 50px;
+}
+.slideBar ul li a{
+    display: flex;
+    color: #fff;
+    text-decoration: none;
+    border-radius:  0.8rem;
+    margin-left: -30px;
+    align-items: center;
+    font-size: 25px;
+}
+.slideBar.active ul li a{
+    font-size: large;
+}
+.slideBar ul li a:hover{
+    background-color: #fff;
+    color: #12171e;
+}
+
+.slideBar ul li i{
+    min-width: 50px;
+    text-align: center;
+    height: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+}
+
+.slideBar.active .nav-item {
+    opacity: 1;
+}
+
+.slideBar .nav-item {
+    opacity: 0;
+}
+/* @UL End */
+
+
+/*                                            Slide bar End                                                                */
+/* /\/\/\/\/\/\/\/\//\\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\//\/\/\/\/\/\/\//\/\/\/\//\/\/\/\/\//\/\/\/\/\ */
+
+
+
+/* /\/\/\/\/\/\/\/\//\\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\//\/\/\/\/\/\/\//\/\/\/\//\/\/\/\/\//\/\/\/\/\ */
+/*                                             Modals Start                                                              */
+
+/* Start Model */
+.modal-content{
+    background-color: #2c2834ba !important;
+    width: 60% !important;
+    height: auto !important;
+}
+.btn-close {
+    --bs-btn-close-color: #fff !important;
+    /* color: #fff !important; */
+}
+#exampleModalLabel{
+    color: #fff !important;
+}
+.col-form-label{
+    color: #fff !important;
+}
+.modal-title{
+    color:  #fff !important;
+}
+/* End Model */
+
+
+/* Start My Custm Modal */
+.Dots-modal{
+    position: fixed;
+    width: 300px;
+    top: 10rem;
+    left: 45rem;
+    transition: all 500ms ease-in-out;
+    z-index: 9;
+    border-radius: 20px;
+}
+/* End My Custm Modal */
+/*                                             Modals End                                                                */
+/* /\/\/\/\/\/\/\/\//\\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\//\/\/\/\/\/\/\//\/\/\/\//\/\/\/\/\//\/\/\/\/\ */
+
+
+
+
+
+
+/* /\/\/\/\/\/\/\/\//\\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\//\/\/\/\/\/\/\//\/\/\/\//\/\/\/\/\//\/\/\/\/\ */
+/*                                            Alerts Start                                                              */
+.alert-pop{
+    position: fixed;
+    width: 30%;
+    bottom:2%;
+    right: 20px;
+}
+.dotDet{
+    color: #fff !important;
+    all: unset;
+}
+/*                                             Alerts End                                                                */
+/* /\/\/\/\/\/\/\/\//\\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\//\/\/\/\/\/\/\//\/\/\/\//\/\/\/\/\//\/\/\/\/\ */
+
+
+
+
+
+
+/* /\/\/\/\/\/\/\/\//\\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\//\/\/\/\/\/\/\//\/\/\/\//\/\/\/\/\//\/\/\/\/\ */
+/*                                            Loader Start                                                              */
+.lds-hourglass {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-hourglass:after {
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    margin: 8px;
+    box-sizing: border-box;
+    border: 32px solid #12171e;
+    border-color: #12171e transparent #12171e transparent;
+    animation: lds-hourglass 1.2s infinite;
+  }
+  @keyframes lds-hourglass {
+    0% {
+      transform: rotate(0);
+      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    50% {
+      transform: rotate(900deg);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    100% {
+      transform: rotate(1800deg);
+    }
+  }
+/*                                             Loader End                                                                */
+/* /\/\/\/\/\/\/\/\//\\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\//\/\/\/\/\/\/\//\/\/\/\//\/\/\/\/\//\/\/\/\/\ */
+
+
+
+
+/* /\/\/\/\/\/\/\/\//\\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\//\/\/\/\/\/\/\//\/\/\/\//\/\/\/\/\//\/\/\/\/\ */
+/*                                            Comments Start                                                              */
+.comment {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.comment-avatar {
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+.comment-avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.comment-content {
+    flex-grow: 1;
+}
+
+.comment-bubble {
+    position: relative;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+.comment-author {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.comment-text {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.comment-actions {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.like-button {
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.like-button i {
+    color: #007bff;
+    font-size: 20px;
+}
+
+.like-count {
+    font-size: 12px;
+    color: #888;
+    margin-left: 10px;
+}
+
+.comment-input {
+    margin-top: 20px;
+}
+
+.comment-input textarea {
+    width: 80%;
+    height: 45px;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-right: 5px;
+    border-bottom: #000 solid 0.3px;
+}
+
+.comment-input textarea:active {
+    border: none;
+}
+
+.comment-input button {
+    padding: 8px 16px;
+    background-color: rgba(0, 123, 255, 0.349);
+    color: #000000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+/*                                             Comments End                                                                */
+/* /\/\/\/\/\/\/\/\//\\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\//\/\/\/\/\/\/\//\/\/\/\//\/\/\/\/\//\/\/\/\/\ */
+
+
+
+/* /\/\/\/\/\/\/\/\//\\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\//\/\/\/\/\/\/\//\/\/\/\//\/\/\/\/\//\/\/\/\/\ */
+/*                                            Profile Page Start                                                              */
+.the-row-prof{
+    margin-left: 7rem;
+     width: 800px;
+}
+.for-mobs{
+    display: none;
+}
+
+
+.profile-posts-images{
+    cursor: pointer;
+    width: 230px;
+     height: 153px;
+}
+/*                                             Profile Page End                                                                */
+/* /\/\/\/\/\/\/\/\//\\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\//\/\/\/\/\/\/\//\/\/\/\//\/\/\/\/\//\/\/\/\/\ */
+
+
+/* /\/\/\/\/\/\/\/\//\\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\//\/\/\/\/\/\/\//\/\/\/\//\/\/\/\/\//\/\/\/\/\ */
+/*                                            nav Start                                                              */
+/* Start Above Nave */
+.abov-nav{
+    display: none;
+    background-color: #12171e;
+    position: sticky;
+    top: 1px;
+    width: auto;
+    height: 50px;
+    z-index: 1;
+}
+/* End Above Nave */
+
+/* Start Bootom Nave */
+.bootom-nav{
+    display: none;
+    background-color: #12171e;
+    position:fixed;
+    
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 1;
+}
+/* End Bootom Nave */
+
+/*                                             nav End                                                                */
+/* /\/\/\/\/\/\/\/\//\\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\//\/\/\/\/\//\/\/\/\/\/\/\//\/\/\/\//\/\/\/\/\//\/\/\/\/\ */
+
+
+
+
+@media (max-width: 430px) {
+    /* navigations */
+    .abov-nav , .bootom-nav{
+        display: block;
+    }
+
+   /* Slidbar */
+    .slideBar{
+        visibility: hidden;
+    }
+    /* // Slidbar // */
+
+
+    /* Post Detels */
+    .hidding{
+        display: none;
+    }
+    /* // Post Detels // */
+
+    .on-mob{
+        margin: 0 !important;
+    }
+    /* ********** Profile******  */
+
+    /* header */
+    .the-row-prof{
+        margin-left: 0;
+         width: 300px;
+         display: flex;
+         flex-wrap: wrap;
+    }
+    #mainImg{
+        width: 80px !important;
+        height: 80px !important;
+        display: inline;
+    }
+    /* body */
+     .profile-posts-images{
+        width: 120px;
+         height: 100px;
+         margin:5px ;
+         /* padding: 6%; */
+    } 
+    .mob{
+        width: 300px !important;
+        display: flex;
+    }
+    /* ***** ///// Profile **** //// */
+
+    /* My Custem Modal */
+    .Dots-modal{
+        position: fixed;
+        width: 300px;
+        top: 15rem;
+        left: 7rem;
+        transition: all 500ms ease-in-out;
+        z-index: 9999;
+    }
+    /* ****** My Custem Modal ******* */
+
+}
